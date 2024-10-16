@@ -85,7 +85,14 @@ public class ReadJson {
                 // System.out.println(person.getInt("key"));
             }
             String height = (String)jsonObject.get("height");
+            String birthyear = (String)jsonObject.get("birth_year");
+            String eyecolor = (String)jsonObject.get("eye_color");
+            String mass = (String)jsonObject.get("mass");
             System.out.println(name);
+            System.out.println(birthyear);
+            System.out.println(eyecolor);
+            System.out.println(mass);
+
         }
 
         catch (Exception e) {
