@@ -101,7 +101,12 @@ public class ReadJson implements ActionListener{
         String totlaJson = "";
         try {
 
-            URL url = new URL("https://pokeapi.co/api/v2/pokemon/bulbasaur");
+            String userpokemon = pokemoninput.getText();
+            String userpokemonName = userpokemon.substring(23);
+            pokemoninput.append("\n");
+            //pokemoninput.append(userpokemonName);
+
+            URL url = new URL("https://pokeapi.co/api/v2/pokemon/"+userpokemonName);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -201,7 +206,8 @@ public class ReadJson implements ActionListener{
                 }
             }
             else if (command.equals("Reset")){
-
+                pokemonoutput.setText("Pokemon info: ");
+                pokemoninput.setText("Input name of Pokemon: ");
             }
 
 
